@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">理财产品收益率计算器</string>
+    <string name="investment_amount">投资金额</string>
+    <string name="annualized_rate">年化收益率</string>
+    <string name="investment_days">投资天数</string>
+    <string name="base_days">基本天数</string>
+    <string name="calculate">计算</string>
+    <string name="reset">重置</string>
+
+</resources>
