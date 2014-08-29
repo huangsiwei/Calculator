@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest
-    package="com.example.calculator"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:versionCode="1"
-    android:versionName="1.0">
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        package="com.example.calculator"
+        android:versionCode="1"
+        android:versionName="1.0">
 
     <uses-sdk android:minSdkVersion="19"/>
 
@@ -11,27 +11,29 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 
     <application
-        android:icon="@drawable/ic_launcher"
-        android:label="@string/app_name">
+            android:icon="@drawable/ic_launcher"
+            android:label="@string/app_name">
         <activity
-            android:name="MyActivity"
-            android:label="@string/app_name"
-            android:theme="@android:style/Theme.Holo.NoActionBar">
+                android:name="MyActivity"
+                android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
         <activity
-            android:name="LoginActivity"
-            android:theme="@android:style/Theme.Holo.NoActionBar">
+                android:name="LoginActivity"
+                android:theme="@android:style/Theme.Holo.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
         <activity android:name="MenuActivity"/>
-        <activity android:name=".BaseActivitys"/>
-        <activity android:name=".ResultActivity"/>
+        <activity android:name="BaseActivitys"/>
+        <activity android:name="ResultActivity"/>
+        <activity
+                android:name="HelloDrawerActivity"
+                android:exported="true"/>
     </application>
 </manifest>

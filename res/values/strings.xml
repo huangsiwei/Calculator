@@ -7,5 +7,21 @@
     <string name="base_days">基本天数</string>
     <string name="calculate">计算</string>
     <string name="reset">重置</string>
+    <string name="drawer_open">打开</string>
+    <string name="drawer_close">关闭</string>
+
+    <string-array name="city">
+        　　
+        <item>丰台区</item>
+        　　
+        <item>石景山区</item>
+        　　
+        <item>海淀区</item>
+        　　
+        <item>漳州市</item>
+        　　
+        <item>朝阳区</item>
+        　　
+    </string-array>
 
 </resources>
