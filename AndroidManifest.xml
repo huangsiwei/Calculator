@@ -35,5 +35,6 @@
         <activity
                 android:name="HelloDrawerActivity"
                 android:exported="true"/>
+        <activity android:name=".RecommendActivity"/>
     </application>
 </manifest>

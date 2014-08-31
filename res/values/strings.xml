@@ -9,19 +9,15 @@
     <string name="reset">重置</string>
     <string name="drawer_open">打开</string>
     <string name="drawer_close">关闭</string>
+    <string name="menu_calculate">收益率计算</string>
+
 
     <string-array name="city">
-        　　
         <item>丰台区</item>
-        　　
         <item>石景山区</item>
-        　　
         <item>海淀区</item>
-        　　
         <item>漳州市</item>
-        　　
         <item>朝阳区</item>
-        　　
     </string-array>
 
 </resources>

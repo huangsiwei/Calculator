@@ -1,14 +1,15 @@
 package com.example.calculator;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.opengl.ETC1;
 import android.os.Bundle;
+import android.os.IBinder;
+import android.support.v4.widget.DrawerLayout;
+import android.text.Layout;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.RadioGroup;
-import android.widget.TextView;
+import android.widget.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,10 +19,14 @@ public class MyActivity extends BaseActivitys {
      * Called when the activity is first created.
      */
 
+    private DrawerLayout mDrawerLayout;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
+        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+
         Button calculateBtn = (Button) findViewById(R.id.calculate);
         calculateBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -75,7 +80,7 @@ public class MyActivity extends BaseActivitys {
             }
         });
 
-        Button resetBtn = (Button)findViewById(R.id.reset);
+        Button resetBtn = (Button) findViewById(R.id.reset);
         resetBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -87,7 +92,28 @@ public class MyActivity extends BaseActivitys {
                 investment_days.setText("");
             }
         });
+
+        ImageButton menuCalculate = (ImageButton) findViewById(R.id.menuCalculate);
+        menuCalculate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.d("DDD", "clicked!!!");
+                mDrawerLayout.closeDrawers();
+            }
+        });
+
+        ImageButton menuRecommend = (ImageButton) findViewById(R.id.menuRecommend);
+        menuRecommend.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mDrawerLayout.closeDrawers();
+                Intent intent = new Intent();
+                intent.setClass(MyActivity.this, RecommendActivity.class);
+                startActivity(intent);
+            }
+        });
     }
+
 
     private boolean vaild(EditText editText) {
 
