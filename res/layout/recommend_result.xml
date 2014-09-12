@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@+id/recommendResult"
+              android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:paddingBottom="3dip"
+              android:paddingLeft="10dip">
+
+    <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:id="@+id/fPIssuer"
+            android:text="平安银行"
+            android:textSize="20dp">
+    </TextView>
+
+    <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:id="@+id/fPMinAmountOfInvestment"
+            android:text="10万"
+            android:textSize="15dp">
+    </TextView>
+
+    <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:id="@+id/fPInvestmentTime"
+            android:text="360天"
+            android:textSize="15dp">
+    </TextView>
+
+    <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:id="@+id/fPExpectedYield"
+            android:text="预计年化收益率8%"
+            android:textSize="15dp">
+    </TextView>
+
+    <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:id="@+id/fPName"
+            android:textSize="20dp"
+            android:text="财富结构类（100％保本挂钩股票）资产管理类2014年254期人民币理财产品TLG140254">
+    </TextView>
+
+
+</LinearLayout>

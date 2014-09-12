@@ -10,6 +10,8 @@
     <string name="drawer_open">打开</string>
     <string name="drawer_close">关闭</string>
     <string name="menu_calculate">收益率计算</string>
+    <string name="query">查询</string>
+
 
 
     <string-array name="city">

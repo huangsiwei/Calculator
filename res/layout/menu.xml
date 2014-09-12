@@ -12,11 +12,6 @@
             android:layout_height="0dp"
             android:layout_weight="1">
 
-        <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="button1"
-                android:gravity="center"/>
     </LinearLayout>
 
     <LinearLayout
@@ -34,7 +29,6 @@
                 android:adjustViewBounds="true"
                 android:gravity="center"/>
 
-
     </LinearLayout>
 
     <LinearLayout
@@ -51,7 +45,6 @@
                 android:layout_gravity="center"
                 android:background="@drawable/filter"/>
 
-
     </LinearLayout>
 
     <LinearLayout
@@ -67,6 +60,20 @@
                 android:adjustViewBounds="true"
                 android:background="@drawable/recommend"/>
 
+    </LinearLayout>
+
+    <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center">
+
+        <ImageButton
+                android:id="@+id/marked"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:background="@drawable/star"/>
 
     </LinearLayout>
 
