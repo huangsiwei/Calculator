@@ -1,17 +1,17 @@
 package com.example.calculator;
 
-import android.app.Activity;
 import android.content.Intent;
-import android.opengl.ETC1;
 import android.os.Bundle;
-import android.os.IBinder;
+import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.widget.DrawerLayout;
-import android.text.Layout;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.*;
 
+import javax.xml.parsers.SAXParser;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class MyActivity extends BaseActivitys {
@@ -19,13 +19,32 @@ public class MyActivity extends BaseActivitys {
      * Called when the activity is first created.
      */
 
-    private DrawerLayout mDrawerLayout;
+    private String[] mPlanetTitles;
+    private DrawerLayout basicDrawerLayout;
+    private ActionBarDrawerToggle mDrawerToggle;
+    private ListView mDrawerList;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
-        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+        basicDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+        initListView();
+        mDrawerToggle = new ActionBarDrawerToggle(this, basicDrawerLayout, R.drawable.ic_launcher, R.string.drawer_open, R.string.drawer_close) {
+            public void onDrawerClosed(View view) {
+                invalidateOptionsMenu();
+            }
+
+            public void onDrawerOpened(View view) {
+                invalidateOptionsMenu();
+            }
+        };
+        basicDrawerLayout.setDrawerListener(mDrawerToggle);
+        getActionBar().setHomeButtonEnabled(true);
+
+        /*
+        理财产品收益率计算功能
+        */
 
         Button calculateBtn = (Button) findViewById(R.id.calculate);
         calculateBtn.setOnClickListener(new View.OnClickListener() {
@@ -80,38 +99,90 @@ public class MyActivity extends BaseActivitys {
             }
         });
 
-        Button resetBtn = (Button) findViewById(R.id.reset);
-        resetBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                EditText investment_amount = (EditText) findViewById(R.id.investment_amount);
-                EditText annualized_rate = (EditText) findViewById(R.id.annualized_rate);
-                EditText investment_days = (EditText) findViewById(R.id.investment_days);
-                investment_amount.setText("");
-                annualized_rate.setText("");
-                investment_days.setText("");
-            }
-        });
+//        Button resetBtn = (Button) findViewById(R.id.reset);
+//        resetBtn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                EditText investment_amount = (EditText) findViewById(R.id.investment_amount);
+//                EditText annualized_rate = (EditText) findViewById(R.id.annualized_rate);
+//                EditText investment_days = (EditText) findViewById(R.id.investment_days);
+//                investment_amount.setText("");
+//                annualized_rate.setText("");
+//                investment_days.setText("");
+//            }
+//        });
+//
+//        ImageButton menuCalculate = (ImageButton) findViewById(R.id.menuCalculate);
+//        menuCalculate.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Log.d("DDD", "clicked!!!");
+////                basicDrawerLayout.closeDrawers();
+//            }
+//        });
+//
+//        ImageButton menuRecommend = (ImageButton) findViewById(R.id.menuRecommend);
+//        menuRecommend.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+////                basicDrawerLayout.closeDrawers();
+//                Intent intent = new Intent();
+//                intent.setClass(MyActivity.this, RecommendActivity.class);
+//                startActivity(intent);
+//            }
+//        });
+    }
 
-        ImageButton menuCalculate = (ImageButton) findViewById(R.id.menuCalculate);
-        menuCalculate.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Log.d("DDD", "clicked!!!");
-                mDrawerLayout.closeDrawers();
-            }
-        });
+    @Override
+    protected void onPostCreate(Bundle savedInstanceState) {
+        super.onPostCreate(savedInstanceState);
+        mDrawerToggle.syncState();
+    }
 
-        ImageButton menuRecommend = (ImageButton) findViewById(R.id.menuRecommend);
-        menuRecommend.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                mDrawerLayout.closeDrawers();
-                Intent intent = new Intent();
-                intent.setClass(MyActivity.this, RecommendActivity.class);
-                startActivity(intent);
-            }
-        });
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Pass the event to ActionBarDrawerToggle, if it returns
+        // true, then it has handled the app icon touch event
+        if (mDrawerToggle.onOptionsItemSelected(item)) {
+            return true;
+        }
+        // Handle your other action bar items...
+
+        return super.onOptionsItemSelected(item);
+    }
+
+
+    private void initListView() {
+        mDrawerList = (ListView) findViewById(R.id.left_drawer);
+        ArrayList<HashMap<String, String>> menuItemList = new ArrayList<HashMap<String, String>>();
+        for (int i = 0; i < 5; i++) {
+            HashMap<String, String> menuItem = new HashMap<String, String>();
+            menuItem.put("icon", "Icon");
+            menuItem.put("name", "Name");
+            menuItemList.add(menuItem);
+        }
+
+        SimpleAdapter menuSimpleAdapter = new SimpleAdapter(this, menuItemList, R.layout.menu_item, new String[]{"icon", "name"}, new int[]{R.id.icon, R.id.name});
+        mDrawerList.setAdapter(menuSimpleAdapter);
+
+//        mPlanetTitles = getResources().getStringArray(R.array.city);
+
+        // Set the adapter for the list view
+//        mDrawerList.setAdapter(new ArrayAdapter<String>(this,
+//                R.layout.main, mPlanetTitles));
+        // Set the list's click listener
+//        mDrawerList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//
+//            @Override
+//            public void onItemClick(AdapterView<?> parent, View view,
+//                                    int position, long id) {
+//                // Highlight the selected item, update the title, and close the
+//                // drawer
+//                mDrawerList.setItemChecked(position, true);
+//                setTitle(mPlanetTitles[position]);
+//                basicDrawerLayout.closeDrawer(mDrawerList);
+//            }
+//        });
     }
 
 
@@ -124,4 +195,5 @@ public class MyActivity extends BaseActivitys {
         }
         return true;
     }
+
 }
