@@ -1,6 +1,5 @@
 package com.example.calculator;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.widget.DrawerLayout;
@@ -9,7 +8,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.*;
 
-import javax.xml.parsers.SAXParser;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -19,7 +17,6 @@ public class MyActivity extends BaseActivitys {
      * Called when the activity is first created.
      */
 
-    private String[] mPlanetTitles;
     private DrawerLayout basicDrawerLayout;
     private ActionBarDrawerToggle mDrawerToggle;
     private ListView mDrawerList;
@@ -29,7 +26,9 @@ public class MyActivity extends BaseActivitys {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         basicDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
-        initListView();
+        //TODO:增加是否登录的Flag
+        boolean isUser = true;
+        initListView(isUser);
         mDrawerToggle = new ActionBarDrawerToggle(this, basicDrawerLayout, R.drawable.ic_launcher, R.string.drawer_open, R.string.drawer_close) {
             public void onDrawerClosed(View view) {
                 invalidateOptionsMenu();
@@ -152,17 +151,43 @@ public class MyActivity extends BaseActivitys {
     }
 
 
-    private void initListView() {
+    private void initListView(boolean isUser) {
         mDrawerList = (ListView) findViewById(R.id.left_drawer);
-        ArrayList<HashMap<String, String>> menuItemList = new ArrayList<HashMap<String, String>>();
-        for (int i = 0; i < 5; i++) {
-            HashMap<String, String> menuItem = new HashMap<String, String>();
-            menuItem.put("icon", "Icon");
-            menuItem.put("name", "Name");
+        ArrayList<HashMap<String, Object>> menuItemList = new ArrayList<HashMap<String, Object>>();
+
+        int[] visitorMenuIconList = new int[]{
+
+        };
+
+        String[] visitorMenuItemNameList = new String[]{
+
+        };
+
+        int[] menuItemIconList = new int[]{};
+
+        String[] menuItemNameList = new String[]{};
+        if (isUser) {
+            menuItemNameList = getResources().getStringArray(R.array.userMenuItemName);
+            menuItemIconList = new int[]{
+                    R.drawable.calculate,
+                    R.drawable.filter,
+                    R.drawable.recommend,
+                    R.drawable.star
+            };
+        } else {
+
+        }
+
+
+        for (int i = 0; i < 4; i++) {
+            HashMap<String, Object> menuItem = new HashMap<String, Object>();
+            menuItem.put("icon", menuItemIconList[i]);
+            menuItem.put("name", menuItemNameList[i]);
             menuItemList.add(menuItem);
         }
 
-        SimpleAdapter menuSimpleAdapter = new SimpleAdapter(this, menuItemList, R.layout.menu_item, new String[]{"icon", "name"}, new int[]{R.id.icon, R.id.name});
+
+        SimpleAdapter menuSimpleAdapter = new SimpleAdapter(this, menuItemList, R.layout.menu_item, new String[]{"icon", "name"}, new int[]{R.id.menuItemIcon, R.id.menuItemName});
         mDrawerList.setAdapter(menuSimpleAdapter);
 
 //        mPlanetTitles = getResources().getStringArray(R.array.city);

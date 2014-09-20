@@ -22,4 +22,17 @@
         <item>朝阳区</item>
     </string-array>
 
+    <string-array name="visitorMenuItemName">
+        <item>注册新账号</item>
+        <item>QQ账号登录</item>
+        <item>微博账号登录</item>
+    </string-array>
+
+    <string-array name="userMenuItemName">
+        <item>计算器</item>
+        <item>筛选器</item>
+        <item>推荐</item>
+        <item>我的关注</item>
+    </string-array>
+
 </resources>
