@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<!--android:background="#80109F"-->
-
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_width="fill_parent"
-              android:layout_height="fill_parent"
-              android:orientation="vertical">
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
 
     <LinearLayout
             android:layout_width="fill_parent"
@@ -36,7 +34,6 @@
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/user_name"/>
-
         </LinearLayout>
 
         <LinearLayout
@@ -67,12 +64,10 @@
                 android:layout_weight="4">
 
             <EditText
-                    android:id="@+id/userPassWord"
+                    android:id="@+id/userEmail"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/user_password"
-                    android:password="true"/>
-
+                    android:hint="@string/user_email"/>
         </LinearLayout>
 
         <LinearLayout
@@ -81,6 +76,7 @@
                 android:layout_weight="1">
 
         </LinearLayout>
+
     </LinearLayout>
 
     <LinearLayout
@@ -88,6 +84,39 @@
             android:layout_height="0dp"
             android:layout_weight="1">
 
+        <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1">
+
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="4">
+
+            <EditText
+                    android:id="@+id/userPassWord"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/user_password"
+                    android:password="true"/>
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1">
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
 
         <LinearLayout
                 android:layout_width="0dp"
@@ -103,10 +132,10 @@
                 android:gravity="center">
 
             <Button
-                    android:id="@+id/login"
+                    android:id="@+id/finish"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/login"/>
+                    android:text="@string/finish"/>
         </LinearLayout>
 
         <LinearLayout
@@ -115,13 +144,6 @@
                 android:layout_weight="1">
 
         </LinearLayout>
-
-    </LinearLayout>
-
-    <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1">
 
     </LinearLayout>
 

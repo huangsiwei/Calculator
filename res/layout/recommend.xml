@@ -9,14 +9,20 @@
     <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:gravity="center">
+            android:orientation="horizontal">
 
-        <Button
-                android:id="@+id/query"
+        <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/query"/>
+                android:text="@string/sortBy"
+                android:textSize="16dp"/>
 
+        <Spinner
+                android:id="@+id/sortBy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+        </Spinner>
 
     </LinearLayout>
 

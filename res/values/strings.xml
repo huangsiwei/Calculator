@@ -11,8 +11,18 @@
     <string name="drawer_close">关闭</string>
     <string name="menu_calculate">收益率计算</string>
     <string name="query">查询</string>
+    <string name="refresh">刷新</string>
+    <string name="calculator">理财产品计算器</string>
+    <string name="sortBy">排序</string>
 
+    <string name="about">关于</string>
+    <string name="log_out">登出</string>
+    <string name="login">登录</string>
 
+    <string name="user_name">用户名</string>
+    <string name="user_email">登录邮箱</string>
+    <string name="user_password">登录密码</string>
+    <string name="finish">完成注册</string>
 
     <string-array name="city">
         <item>丰台区</item>
@@ -26,6 +36,7 @@
         <item>注册新账号</item>
         <item>QQ账号登录</item>
         <item>微博账号登录</item>
+        <item>登录</item>
     </string-array>
 
     <string-array name="userMenuItemName">
@@ -34,5 +45,55 @@
         <item>推荐</item>
         <item>我的关注</item>
     </string-array>
+
+    <string-array name="sortType">
+        <item>起投金额</item>
+        <item>投资周期</item>
+        <item>预计年化收益率</item>
+    </string-array>
+
+    <string-array name="investmentMoneyList">
+        <item>5万元及以下</item>
+        <item>10万元及以下</item>
+        <item>50万元及以下</item>
+        <item>50万元及以上</item>
+    </string-array>
+
+    <string-array name="investmentTimeList">
+        <item>3个月及以下</item>
+        <item>6个月及以下</item>
+        <item>12个月及以下</item>
+        <item>12个月及以上</item>
+    </string-array>
+
+    <string-array name="preservationTypeList">
+        <item>保本固定收益</item>
+        <item>保本浮动收益</item>
+        <item>非保本浮动收益</item>
+    </string-array>
+
+    <string-array name="issuerList">
+        <item>北京银行</item>
+        <item>工商银行</item>
+        <item>杭州银行</item>
+        <item>华夏银行</item>
+        <item>建设银行</item>
+        <item>交通银行</item>
+        <item>民生银行</item>
+        <item>南京银行</item>
+        <item>宁波银行</item>
+        <item>农业银行</item>
+        <item>平安银行</item>
+        <item>浦发银行</item>
+        <item>上海农商银行</item>
+        <item>上海银行</item>
+        <item>天津银行</item>
+        <item>兴业银行</item>
+        <item>星展银行</item>
+        <item>邮政储蓄银行</item>
+        <item>招商银行</item>
+        <item>中国银行</item>
+    </string-array>
+
 
 </resources>

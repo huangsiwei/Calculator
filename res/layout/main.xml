@@ -13,16 +13,17 @@
 
         <include layout="@layout/calculate"/>
 
-        <LinearLayout
-                android:id="@+id/drawer_view"
+        <ListView
+                android:id="@+id/left_drawer"
                 android:layout_width="240dp"
                 android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:layout_gravity="start">
+                android:layout_gravity="left"
+                android:background="#ff8c8778"
+                android:choiceMode="singleChoice"
+                android:divider="@android:color/transparent"
+                android:dividerHeight="0dp">
 
-            <include layout="@layout/browsing_menu"/>
-
-        </LinearLayout>
+        </ListView>
 
     </android.support.v4.widget.DrawerLayout>
 
