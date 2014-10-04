@@ -35,5 +35,6 @@
         <activity android:name="RecommendActivity"/>
         <activity android:name=".RegisterActivity"/>
         <activity android:name=".FilterActivity"/>
+        <activity android:name=".FilterResultActivity"/>
     </application>
 </manifest>

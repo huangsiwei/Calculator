@@ -1,7 +1,6 @@
 package com.example.calculator;
 
 import android.app.Activity;
-import android.content.ClipData;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -91,7 +90,7 @@ public class RecommendActivity extends Activity {
                         recommendResultList.add(dataMap);
                     }
                     ListView recommendResultListView = (ListView) findViewById(R.id.recommendResultListView);
-                    SimpleAdapter simpleAdapter = new SimpleAdapter(RecommendActivity.this, recommendResultList, R.layout.recommend_result,
+                    SimpleAdapter simpleAdapter = new SimpleAdapter(RecommendActivity.this, recommendResultList, R.layout.query_result,
                             new String[]{"fPName", "fPIssuer", "fPMinAmountOfInvestment", "fPInvestmentTime", "fPExpectedYield"},
                             new int[]{R.id.fPName, R.id.fPIssuer, R.id.fPMinAmountOfInvestment, R.id.fPInvestmentTime, R.id.fPExpectedYield});
                     recommendResultListView.setAdapter(simpleAdapter);
